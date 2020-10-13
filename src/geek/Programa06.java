@@ -1,5 +1,5 @@
 package geek;
-// Instrução Switch
+// Instrução Switch - Tomar cuidado para não esquecer o break;
 public class Programa06 {
 	public static void main(String[] args) {
 		int num = 33;
