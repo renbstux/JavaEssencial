@@ -36,8 +36,8 @@ public class Programa20 {
 	}
 /*
  * Uma função deve ter o seguinte:
- * a) Tipo de retorno;
- * b) Nome;
+ * a) Tipo de retorno(Tipo de dado que a função vai retornar);
+ * b) Nome - Corresponde a ação que a função realiza;
  * c) Parametros/Argumentos de entrada (opcional)
  * d) Retorno (Opcional - depende do tipo de retorno)
  * 
