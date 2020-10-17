@@ -14,7 +14,7 @@ public class Programa26 {
 		//System.out.println("Nome: " + cli.nome); //estão como private
 		//System.out.println("Endereço: " + cli.endereco); // private
 				
-
+		//cli.dizer_oi(); //Protected 
 	}
 
 }
