@@ -43,6 +43,4 @@ public class Conta {
 	public float getSaldo() {
 		return this.saldo + this.limite;
 	}
-	
-	
 }

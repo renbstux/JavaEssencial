@@ -13,8 +13,9 @@ public class Programa25 {
 		System.out.println("Saldo do João (Antes do saque): " + conta_joao.getSaldo());
 		System.out.println("Saldo da Maria: " + conta_maria.getSaldo());
 		
-		conta_joao.sacar(300);				
+		conta_joao.sacar(150);				
 		System.out.println("Saldo do João (Depois do saque): " + conta_joao.getSaldo());
-	}
+		
+		}
 
 }
