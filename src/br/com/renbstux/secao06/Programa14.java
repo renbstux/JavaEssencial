@@ -1,6 +1,7 @@
 package br.com.renbstux.secao06;
 //Tipos booleanos
 public class Programa14 {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		//Tipos Primitivos
 		boolean verdadeiro= true;

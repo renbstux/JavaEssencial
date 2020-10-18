@@ -2,6 +2,7 @@ package br.com.renbstux.secao03;
 //Variaveis
 public class Programa01 {
 
+	@SuppressWarnings("unused") //Decorator
 	public static void main(String[] args) {
 		//Declaracao de variavel
 		int valor;
