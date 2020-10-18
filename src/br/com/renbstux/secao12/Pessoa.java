@@ -6,7 +6,22 @@ package br.com.renbstux.secao12;
  * - Super Classe
  * - Classe genérica
  */
-public class Pessoa {
+
+//Agora como classe Abstrata
+/*
+ * Desta forma, impossibilitamos a criação de objetos desta classe
+ * 
+ * Uma classe abstrata pode ter:
+ * 		- atributos;
+ * 		- Métodos;
+ * 		- Métodos abstratos;
+ * 
+ * Métodos abstratos:
+ * 		- São métodos, que não possuem implementação, possuem apenas
+ * 		  declaração, e obrigatoriamente, as classe que herdarem desta
+ * 		  classe com métodos abstrato, precisa implementar estes métodos.
+ */
+public abstract class Pessoa {
 	private String nome;
 	private int ano_nascimento;
 	private String email;
@@ -54,4 +69,6 @@ public class Pessoa {
 	public void mensagem(String msg, int num) {
 		System.out.println(msg + num);
 	}
+	//Declaração de um método abstrato
+	public abstract void outra_mensagem(String texto);
 }

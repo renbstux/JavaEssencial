@@ -21,5 +21,10 @@ public class Professor extends Pessoa {
 	public String getNome() {
 		return "Professor: \n" + super.getNome();
 	}
+	@Override
+	public void outra_mensagem(String texto) {
+		System.out.println(texto);
+		
+	}
 
 }
