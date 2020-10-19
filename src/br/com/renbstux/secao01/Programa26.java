@@ -9,7 +9,7 @@ import br.com.renbstux.secao11.Cliente;
 public class Programa26 {
 
 	public static void main(String[] args) {
-		Cliente cli = new Cliente("Angelina Jolie","Rua da Barra, 255");
+		Cliente cli = new Cliente(45, "Angelina Jolie","Rua da Barra, 255");
 		
 		//System.out.println("Nome: " + cli.nome); //estão como private
 		//System.out.println("Endereço: " + cli.endereco); // private
