@@ -8,7 +8,7 @@ package br.com.renbstux.secao11;
  * sejá visivel somente dentro do mesmo pacote onde o elemento 
  * foi declarado.
  */
-public class Cliente {
+public class Cliente  {
 	private String nome;
 	private String endereco;
 	
@@ -29,5 +29,6 @@ public class Cliente {
 	public String getEndereco() {
 		return this.endereco;
 	}
+	
 
 }

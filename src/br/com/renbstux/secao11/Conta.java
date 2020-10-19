@@ -54,4 +54,18 @@ public class Conta {
 	public float getSaldo() {
 		return this.saldo + this.limite;
 	}
+	@Override
+	public String toString() {
+		return "O Saldo da conta é: " + this.getSaldo();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Conta)) { //Java.lang instanceof - se for instancia de objeto
+			return false;
+		}else {
+		Conta verificar = (Conta) obj; //Cast
+		return verificar.getSaldo() == this.getSaldo();
+		}
+	}
 }
