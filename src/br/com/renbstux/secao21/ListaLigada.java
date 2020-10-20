@@ -11,14 +11,15 @@ public class ListaLigada {
 	 */
 	//Overload ou Sobrecarga de método
 	public void adicionaNoComeco(Object elemento) {
-		//[42] -> null
-		Celula nova = new Celula(elemento, this.primeira);
-		this.primeira = nova;
-		
 		if(this.total == 0) {
-			this.ultima = this.primeira;
+			Celula nova = new Celula(elemento);
+			this.primeira = nova;
+			this.ultima = nova;
+		}else {
+			Celula nova = new Celula( elemento, this.primeira);
+			this.primeira.setAnterior(nova);
+			this.primeira = nova;
 		}
-		
 		this.total = this.total + 1;
 	}
 	
@@ -31,8 +32,9 @@ public class ListaLigada {
 		if(this.total == 0) {
 			this.adicionaNoComeco(elemento);
 		}else {
-		Celula nova = new Celula(elemento, null);
-		this.ultima.setProximo(nova);;
+		Celula nova = new Celula(elemento);
+		this.ultima.setProximo(nova);
+		nova.setAnterior(this.ultima); // <- objeto ->
 		this.ultima = nova;
 		this.total = this.total + 1;
 		}
@@ -52,8 +54,13 @@ public class ListaLigada {
 			this.adiciona(elemento);
 		}else {
 			Celula anterior = this.pegaCelula(posicao - 1);
+			
+			Celula proxima = anterior.getProximo(); // Novo
+			
 			Celula nova = new Celula(elemento, anterior.getProximo());
 			anterior.setProximo(nova);
+			nova.setAnterior(anterior); //Novo
+			proxima.setAnterior(nova); //Novo
 			this.total = this.total + 1;
 		}
 	}
@@ -63,7 +70,34 @@ public class ListaLigada {
 	}
 	
 	public void remove(int posicao) {
-		//TODO
+		//Se só tiver um elemento
+		if(posicao == 0) {
+			this.removeDoComeco();
+			//Se for o ultimo elemento
+		}else if(posicao == this.total -1) {
+			this.removeDoFim();
+			//Se for um elemento do meio
+		}else {
+			Celula anterior = this.pegaCelula(posicao -1);
+			Celula atual = anterior.getProximo();
+			Celula proxima = atual.getProximo();
+			
+			anterior.setProximo(proxima);
+			proxima.setAnterior(anterior);
+			
+			this.total = this.total - 1;
+		}
+	}
+	
+	public void removeDoFim() {
+		if(this.total == 1) {
+			this.removeDoComeco();
+		}else {
+			Celula penultima = this.ultima.getAnterior();
+			penultima.setProximo(null);
+			this.ultima = penultima;
+			this.total = this.total -1;
+		}
 	}
 	
 	public void removeDoComeco() {
@@ -83,7 +117,14 @@ public class ListaLigada {
 	}
 	
 	public boolean contem(Object obj) {
-		//TODO
+		Celula atual = this.primeira;
+		
+		while(atual != null) {
+			if(atual.getElemento().equals(obj)) {
+				return true;
+			}
+			atual = atual.getProximo();
+		}
 		return false;
 	}
 	
