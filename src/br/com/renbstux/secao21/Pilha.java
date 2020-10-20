@@ -24,7 +24,12 @@ public class Pilha {
 	 * método chama-se pop.
 	 */
 	public String remove() {
+		try {
 		return nomes.remove(nomes.size() - 1);
+		}catch(IndexOutOfBoundsException e) {
+			System.out.println("A fila já esta vazia!");
+			return "";
+		}
 	}
 	
 	public String pegaTopo() {

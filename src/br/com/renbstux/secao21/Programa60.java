@@ -8,6 +8,8 @@ package br.com.renbstux.secao21;
  * Os elementos, ao serem adicionados em uma pilha, são adicionados sempre no topo.
  * 
  * Para remover elementos da pilha, só podemos remover o topo.
+ * 
+ * O Primeiro elemento a entrar é o primeiro a sair
  
  [4] -> Tem visibilidade
  [3]
